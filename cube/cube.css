@@ -5,23 +5,28 @@
 }
 label, #shadows {
     position: fixed;
-    top: 2vmin;
+    /* top: 2vmin; */
+    top: 20px;
     opacity: 0.5;
 }
 label {
-    left: 6vmin;
+    /* left: 6vmin; */
+    left: 60px;
     color: white;
     font-weight: bold;
 }
 #shadows {
-    left: 2vmin;
+    /* left: 2vmin; */
+    left: 20px;
 }
 #shadows:not(:checked) ~ .cubes {
     --shadow-filter: none;
 }
 .cubes {
-    width: 10vmin;
-    height: 10vmin;
+    /* width: 10vmin;
+    height: 10vmin; */
+    width: 100px;
+    height: 100px;
     transform: rotateX(60deg) rotateZ(-45deg);
     backface-visibility: visible;
     overflow: visible;
@@ -29,11 +34,14 @@ label {
     perspective: 9000px;
 }
 .cube, .large-shadow {
-    height: 10vmin;
-    width: 10vmin;
+    /* height: 10vmin; */
+    height: 100px;
+    /* width: 10vmin; */
+    width: 100px;
     transform-style: preserve-3d;
     backface-visibility: visible;
-    transform-origin: center center -0.5vmin;
+    /* transform-origin: center center -0.5vmin; */
+    transform-origin: center center -5px;
     position: absolute;
     top: 0;
     left: 0;
@@ -47,7 +55,8 @@ label {
     height: 100%;
     transform-style: preserve-3d;
     backface-visibility: visible;
-    transform-origin: center center -0.5vmin;
+    /* transform-origin: center center -0.5vmin; */
+    transform-origin: center center -5px;
     will-change: transform;
 }
 @keyframes cube {
@@ -60,7 +69,8 @@ label {
    }
 }
 .cube[data-cube^="1"], .large-shadow[data-cube^="1"] {
-    top: calc(-10vmin - 2px);
+    /* top: calc(-10vmin - 2px); */
+    top: -102px;
     --color-bg-top: #11bf98;
     --color-bg-bottom: #009974;
     --color-fl-top: #005133;
@@ -73,14 +83,16 @@ label {
     --color-fl-bottom: #003016;
 }
 .cube[data-cube^="3"], .large-shadow[data-cube^="3"] {
-    top: calc(10vmin + 2px);
+    /* top: calc(10vmin + 2px); */
+    top: 102px;
     --color-bg-top: #11bf98;
     --color-bg-bottom: #009974;
     --color-fl-top: #005133;
     --color-fl-bottom: #003016;
 }
 .cube[data-cube^="11"], .large-shadow[data-cube^="11"], .cube[data-cube^="21"], .large-shadow[data-cube^="21"], .cube[data-cube^="31"], .large-shadow[data-cube^="31"] {
-    left: calc(-10vmin - 2px);
+    /* left: calc(-10vmin - 2px); */
+    left: -102px;
     --color-fr-top: #2d505f;
     --color-fr-bottom: #2d4f63;
 }
@@ -89,26 +101,32 @@ label {
     --color-fr-bottom: #2a5262;
 }
 .cube[data-cube^="13"], .large-shadow[data-cube^="13"], .cube[data-cube^="23"], .large-shadow[data-cube^="23"], .cube[data-cube^="33"], .large-shadow[data-cube^="33"] {
-    left: calc(10vmin + 2px);
+    /* left: calc(10vmin + 2px); */
+    left: 102px;
     --color-fr-top: #2a5262;
     --color-fr-bottom: #2a5467;
 }
 .cube[data-cube$="2"], .large-shadow[data-cube$="2"] {
-    transform: translateZ(calc(10vmin + 2px));
+    /* transform: translateZ(calc(10vmin + 2px)); */
+    transform: translateZ(102px);
 }
 .cube[data-cube$="3"], .large-shadow[data-cube$="3"] {
-    transform: translateZ(calc(-10vmin - 2px));
+    /* transform: translateZ(calc(-10vmin - 2px)); */
+    transform: translateZ(-102px);
 }
 .large-shadows {
     transform: translateZ(-21vmin);
 }
 .large-shadow {
     background: black;
-    height: 10vmin;
-    width: 10vmin;
+    /* height: 10vmin;
+    width: 10vmin; */
+    height: 100px;
+    width: 100px;
     transform-origin: top right;
     animation: large-shadow 4s infinite both;
-    filter: var(--shadow-filter, blur(3vmin));
+    /* filter: var(--shadow-filter, blur(3vmin)); */
+    filter: var(--shadow-filter, blur(33px));
     opacity: 0.2;
     will-change: transform;
 }
@@ -181,7 +199,8 @@ label {
 }
 @keyframes cube-top {
     20% {
-        transform: translateZ(calc(-10vmin + 2vmin));
+        /* transform: translateZ(calc(-10vmin + 2vmin)); */
+        transform: translateZ(calc(-80px));
    }
     40%, 60%, 80% {
         transform: none;
@@ -205,7 +224,8 @@ label {
         transform: scaleX(0.2);
    }
     40%, 60% {
-        transform: translateX(-8vmin) scaleX(0.2);
+        /* transform: translateX(-8vmin) scaleX(0.2); */
+        transform: translateX(-80px) scaleX(0.2);
    }
     80% {
         transform: none;
@@ -226,23 +246,27 @@ label {
         transform: scaleY(0.2);
    }
     40%, 60% {
-        transform: translateY(8vmin) scaleY(0.2);
+        /* transform: translateY(8vmin) scaleY(0.2); */
+        transform: translateY(80px) scaleY(0.2);
    }
     80% {
         transform: none;
    }
 }
 .cube-bottom {
-    transform: translateZ(-10vmin);
+    /* transform: translateZ(-10vmin); */
+    transform: translateZ(-100px);
     background-image: linear-gradient(to bottom, var(--color-bg-top), var(--color-bg-bottom));
     animation-name: cube-bottom;
 }
 @keyframes cube-bottom {
     from, 20%, 80%, to {
-        transform: translateZ(calc(-10vmin + 1px)) scale(0.95);
+        /* transform: translateZ(calc(-10vmin + 1px)) scale(0.95); */
+        transform: translateZ(calc(-99px)) scale(0.95);
    }
     40%, 60% {
-        transform: translateZ(-2vmin) scale(0.95);
+        /* transform: translateZ(-2vmin) scale(0.95); */
+        transform: translateZ(-20px) scale(0.95);
    }
 }
 .cube-bottom:after {
@@ -320,12 +344,16 @@ label {
    }
 }
 .shadow-flip {
-    width: 2vmin;
+    /* width: 2vmin; */
+    width: 20px;
     height: 50%;
-    top: -1vmin;
-    left: calc(50% - 1vmin);
+    /* top: -1vmin; */
+    top: -10px;
+    /* left: calc(50% - 1vmin); */
+    left: calc(50% - 10px);
     transform-origin: top center;
-    filter: var(--shadow-filter, blur(1vmin));
+    /* filter: var(--shadow-filter, blur(1vmin)); */
+    filter: var(--shadow-filter, blur(10px));
     animation: shadow-flip 4s infinite both;
     overflow: visible;
 }
